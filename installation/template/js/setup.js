@@ -88,7 +88,8 @@ Joomla.checkDbCredentials = function() {
   document.getElementById('installStep3').classList.remove('active');
   document.getElementById('installStep4').classList.add('active');
   progress_text.innerText = Joomla.Text._('INSTL_IN_PROGRESS');
-  document.title = Joomla.Text._('INSTL_PROGRESS') + " " + Joomla.Text._('INSTL_PAGE_TITLE');
+  document.getElementById('page-title').innerText = Joomla.Text._('INSTL_PAGE_TITLE') + ": " + Joomla.Text._('INSTL_PROGRESS');
+  document.title = Joomla.Text._('INSTL_PAGE_TITLE') + ": " + Joomla.Text._('INSTL_PROGRESS');
 
   Joomla.request({
     method: "POST",
@@ -155,7 +156,8 @@ Joomla.checkDbCredentials = function() {
   }
 
   Joomla.pageInit();
-  document.title = Joomla.Text._('INSTL_SETUP_SITE_NAME') + " " + Joomla.Text._('INSTL_PAGE_TITLE');
+  document.title = Joomla.Text._('INSTL_PAGE_TITLE') + ": " + Joomla.Text._('INSTL_SETUP_SITE_NAME');
+  document.getElementById('page-title').innerText = Joomla.Text._('INSTL_PAGE_TITLE') + ": " + Joomla.Text._('INSTL_SETUP_SITE_NAME');
   var el = document.querySelector('.nav-steps.hidden');
   if (el) {
     el.classList.remove('hidden');
@@ -186,7 +188,8 @@ Joomla.checkDbCredentials = function() {
         if (document.getElementById('installStep2')) {
           document.getElementById('installStep2').classList.add('active');
           document.getElementById('installStep1').classList.remove('active');
-          document.title = Joomla.Text._('INSTL_LOGIN_DATA') + " " + Joomla.Text._('INSTL_PAGE_TITLE');
+          document.title = Joomla.Text._('INSTL_PAGE_TITLE') + ": " + Joomla.Text._('INSTL_LOGIN_DATA');
+          document.getElementById('page-title').innerText = Joomla.Text._('INSTL_PAGE_TITLE') + ": " + Joomla.Text._('INSTL_LOGIN_DATA');
 
           // Focus to the next field
           if (document.getElementById('jform_admin_user')) {
@@ -205,7 +208,8 @@ Joomla.checkDbCredentials = function() {
           document.getElementById('installStep3').classList.add('active');
           document.getElementById('installStep2').classList.remove('active');
           document.getElementById('setupButton').classList.remove('hidden');
-          document.title = Joomla.Text._('INSTL_DATABASE') + " " + Joomla.Text._('INSTL_PAGE_TITLE');
+          document.title = Joomla.Text._('INSTL_PAGE_TITLE') + ": " + Joomla.Text._('INSTL_DATABASE');
+          document.getElementById('page-title').innerText = Joomla.Text._('INSTL_PAGE_TITLE') + ": " + Joomla.Text._('INSTL_DATABASE');
 
           Joomla.makeRandomDbPrefix();
 
