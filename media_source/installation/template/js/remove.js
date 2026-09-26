@@ -5,7 +5,7 @@
  */
 // Init on dom content loaded event
 var url = Joomla.getOptions('system.installation').url ? Joomla.getOptions('system.installation').url.replace(/&amp;/g, '&') : 'index.php';
-document.title = Joomla.Text._('INSTL_PAGE_TITLE') + ": " + Joomla.Text._('INSTL_COMPLETE_TITLE');
+document.title = Joomla.Text._('INSTL_PAGE_TITLE') + ': ' + Joomla.Text._('INSTL_COMPLETE_TITLE');
 
 if (document.getElementById('installAddFeatures')) {
   document.getElementById('installAddFeatures').addEventListener('click', function (e) {
